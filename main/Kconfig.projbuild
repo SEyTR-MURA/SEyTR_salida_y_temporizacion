@@ -1,0 +1,20 @@
+# Las opciones declaradas en un Kconfig.projbuild aparecen en el nivel superior
+# del menu de configuracion, junto a las de ESP-IDF, y no dentro del submenu de
+# configuracion de componentes. Se convierten en macros CONFIG_... disponibles
+# desde el codigo.
+#
+# El pin del LED no esta aqui: esta en main/pines.h, que es donde se declaran
+# los pines del proyecto.
+
+menu "SEyTR - Salida y temporizacion"
+
+    config SEYTR_PERIODO_MS
+        int "Periodo del parpadeo, en milisegundos"
+        range 20 10000
+        default 1000
+        help
+            Tiempo entre dos encendidos consecutivos del LED. La mitad del
+            periodo esta encendido y la otra mitad, apagado.
+            Con el tic a 1000 Hz, cada milisegundo es un tic.
+
+endmenu
