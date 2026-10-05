@@ -7,4 +7,5 @@ dependencies.lock
 
 # Entorno del editor
 .vscode/
+.devcontainer/
 .clangd
